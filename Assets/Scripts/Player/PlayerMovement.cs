@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
         //casts a ray to check if you are touching the ground
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+
         if(grounded)
         {
             rb.linearDamping = groundDrag;
@@ -87,9 +88,16 @@ public class PlayerMovement : MonoBehaviour
         //takes the front and right side of orientation module, multiplies it by the movement inputs
         movementDirection = orientation.forward * verticalMovement + orientation.right * horizontalMovement;
         //when the player is grounded
-        rb.AddForce(movementDirection.normalized * playerSpeed * 10f, ForceMode.Force);
+        if (grounded)
+        {
+            rb.AddForce(movementDirection.normalized * playerSpeed * 10f, ForceMode.Force);
+        }
+
         //when player is airborne
-        rb.AddForce(movementDirection.normalized * playerSpeed * 10f * airMultiplier, ForceMode.Force);
+        else if (!grounded)
+        {
+            rb.AddForce(movementDirection.normalized * playerSpeed * 10f * airMultiplier, ForceMode.Force);
+        }
     }
 
     private void speedControl()

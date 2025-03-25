@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - FinishLine
+  - objective
+  - FailLine
+  - obstacle
+  - Tunnel
   layers:
   - Default
   - TransparentFX
