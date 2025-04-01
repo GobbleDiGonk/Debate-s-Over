@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FailMenu_tunnel.unity
     guid: f20efff8b5c6bdd49b511c6b7b093ba2
+  - enabled: 1
+    path: Assets/Scenes/FailMenu_debateLost.unity
+    guid: 32c5a99296766c945a8ad48294cc5c3e
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

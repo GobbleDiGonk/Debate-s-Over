@@ -21,7 +21,7 @@ public class playerInteraction : MonoBehaviour
         }
 
         if (collision.CompareTag("FinishLine"))
-        {
+        {            
             SceneManager.LoadScene("DebateSection");
         }
 
@@ -31,13 +31,18 @@ public class playerInteraction : MonoBehaviour
         }
 
         if (collision.CompareTag("obstacle"))
-        {
+        {            
             SceneManager.LoadScene("FailMenu_obstacle");
         }
 
         if (collision.CompareTag("Tunnel"))
         {
             SceneManager.LoadScene("FailMenu_tunnel");
+        }
+
+        if(collision.CompareTag("Grass"))
+        {
+            SceneManager.LoadScene("FailMenu_grass");
         }
     }
 

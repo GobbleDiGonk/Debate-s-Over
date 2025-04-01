@@ -14,6 +14,8 @@ public class Dialogue : MonoBehaviour
         dialogue2.SetActive(false);
         dialogueSuccess.SetActive(false);
         dialogueFail.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void dialogueChangePositive()

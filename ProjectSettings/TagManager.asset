@@ -9,6 +9,7 @@ TagManager:
   - FailLine
   - obstacle
   - Tunnel
+  - Grass
   layers:
   - Default
   - TransparentFX
