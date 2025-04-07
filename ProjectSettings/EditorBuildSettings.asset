@@ -26,5 +26,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FailMenu_debateLost.unity
     guid: 32c5a99296766c945a8ad48294cc5c3e
+  - enabled: 1
+    path: Assets/Scenes/FailMenu_timesup.unity
+    guid: 9ef9a85f6430a1040b43f8309bc24f99
+  - enabled: 1
+    path: Assets/Scenes/FailMenu_grass.unity
+    guid: fcd43c186e18f8a49b9c5ac2aa44903d
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

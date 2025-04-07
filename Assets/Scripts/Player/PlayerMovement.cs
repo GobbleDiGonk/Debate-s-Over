@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class PlayerMovement : MonoBehaviour
     public float playerHeight;
     public LayerMask whatIsGround;
     bool grounded;
+
+    [Header("Grass Check")]
+    public LayerMask whatIsGrass;
+    bool touchingGrass;
 
     [Header("Jump")]
     public float jumpForce;
@@ -49,8 +54,9 @@ public class PlayerMovement : MonoBehaviour
 
         //casts a ray to check if you are touching the ground
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+        touchingGrass = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGrass);
 
-        if(grounded)
+        if (grounded)
         {
             rb.linearDamping = groundDrag;
             canJump = true;
@@ -59,6 +65,11 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearDamping = 0;
             canJump = false;
+        }
+
+        if(touchingGrass && !grounded)
+        {
+            SceneManager.LoadScene("FailMenu_grass");
         }
     }
 
